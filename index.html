@@ -320,7 +320,6 @@ a {
    ============================================= */
 .hero {
   position: relative;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -328,12 +327,15 @@ a {
   overflow: hidden;
   background-color: #000;
   padding-top: 70px;
+  background: url('hero-student-v2.png') center/contain no-repeat;
+  min-height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .hero__image-bg {
   position: absolute;
   inset: 0;
-  background: url('hero-student-v2.png') center/cover no-repeat;
+  background: url('hero-student-v2.png') center/contain no-repeat;
   opacity: 1;
   z-index: 0;
 }
