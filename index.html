@@ -99,75 +99,67 @@ a {
 }
 
 .section-title {
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 700;
   text-align: center;
   margin-bottom: var(--spacing-lg);
-  color: var(--color-text);
-  letter-spacing: 0.02em;
+  line-height: 1.3;
 }
 
-.section-title--red {
-  color: var(--color-primary);
-}
-
-/* ---------- Buttons ---------- */
+/* ---------- Button Styles ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 14px 32px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
   border-radius: var(--radius-full);
-  font-size: 15px;
-  font-weight: 700;
+  border: 2px solid transparent;
   cursor: pointer;
   transition: all var(--transition);
-  border: 2px solid transparent;
+  text-decoration: none;
   white-space: nowrap;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
 }
 
 .btn--primary {
   background: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(226,0,62,0.35);
+  color: white;
 }
 
 .btn--primary:hover {
   background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(226,0,62,0.45);
+  box-shadow: var(--shadow-md);
 }
 
-.btn--outline {
+.btn--line {
+  background: #00B900;
+  color: white;
+}
+
+.btn--line:hover {
+  background: #009900;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--sns {
   background: transparent;
   color: var(--color-text);
-  border-color: var(--color-text);
+  border: 2px solid var(--color-border);
 }
 
-.btn--outline:hover {
-  background: var(--color-text);
-  color: var(--color-white);
-  transform: translateY(-2px);
-}
-
-.btn--outline-red {
-  background: transparent;
-  color: var(--color-primary);
+.btn--sns:hover {
   border-color: var(--color-primary);
-  padding: 12px 40px;
-}
-
-.btn--outline-red:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
-  transform: translateY(-2px);
-}
-
-.btn__arrow {
-  font-size: 18px;
-  line-height: 1;
+  color: var(--color-primary);
+  background: rgba(226, 0, 62, 0.05);
 }
 
 /* =============================================
@@ -178,141 +170,46 @@ a {
   top: 0;
   left: 0;
   right: 0;
+  height: 70px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   z-index: 1000;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  transition: box-shadow var(--transition);
-}
-
-.header.scrolled {
-  box-shadow: var(--shadow-sm);
-}
-
-.header__inner {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-  height: 120px; /* ヘッダーの高さを現在の半分に縮小 */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 var(--spacing-md);
 }
 
 .header__logo {
-  display: flex;
-  align-items: center;
-}
-
-.header__logo-img {
-  height: 72px; /* ロゴの高さを現在の半分に縮小 */
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-
-@media (max-width: 768px) {
-  .header__logo-img {
-    height: 50px; /* モバイルでも現在の半分に縮小 */
-  }
-}
-
-.header__logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.header__logo-sub {
-  font-size: 9px;
-  color: var(--color-primary);
-  letter-spacing: 0.05em;
-  line-height: 1.2;
-}
-
-.header__logo-main {
   font-size: 18px;
   font-weight: 700;
   color: var(--color-primary);
-  letter-spacing: 0.05em;
-  line-height: 1.2;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .header__nav {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
-.header__nav-link {
-  font-size: 13px;
-  font-weight: 500;
+.header__nav a {
+  font-size: 14px;
   color: var(--color-text);
   transition: color var(--transition);
-  position: relative;
 }
 
-.header__nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width var(--transition);
-}
-
-.header__nav-link:hover {
+.header__nav a:hover {
   color: var(--color-primary);
 }
 
-.header__nav-link:hover::after {
-  width: 100%;
-}
-
-.header__menu-btn {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: var(--color-primary);
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: var(--radius-sm);
-  width: 44px;
-  height: 44px;
+.header__actions {
+  display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.header__menu-btn span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: white;
-  border-radius: 2px;
-  transition: all var(--transition);
-}
-
-.header__menu-btn.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.header__menu-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.header__menu-btn.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-@media (max-width: 992px) {
-  .header__nav {
-    display: none;
-  }
-  .header__menu-btn {
-    display: flex;
-  }
+  gap: var(--spacing-sm);
 }
 
 /* =============================================
@@ -320,361 +217,63 @@ a {
    ============================================= */
 .hero {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background-color: #000;
+  width: 100%;
   padding-top: 70px;
-  background: url('hero-student-v2.png') center/contain no-repeat;
-  min-height: auto;
-  aspect-ratio: 16 / 9;
+  background: #f5f5f5;
+  overflow: hidden;
 }
 
-.hero__image-bg {
-  position: absolute;
-  inset: 0;
-  background: url('hero-student-v2.png') center/contain no-repeat;
-  opacity: 1;
-  z-index: 0;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero__network {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: none;
-}
-
-#networkCanvas {
-  width: 100%;
-  height: 100%;
-  display: none;
-}
-
-.hero__blobs {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  display: block;
-}
-
-.hero__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+.hero__image-wrapper {
   position: relative;
-  z-index: 10;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .hero__image {
-  display: none;
-}
-
-.hero__image-img {
-  display: none;
-}
-
-.hero__tagline {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.6;
-  color: #ffffff;
-  margin: var(--spacing-md) 0 var(--spacing-lg) 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.hero__tagline-emphasis {
-  color: #ff6b9d;
-  font-size: 28px;
-  font-weight: 700;
-  display: inline-block;
-}
-
-.hero__companies {
   width: 100%;
-  text-align: center;
-  margin-top: var(--spacing-xl);
-  position: relative;
-  z-index: 10;
-}
-
-.hero__companies-label {
-  font-size: 14px;
-  color: #999;
-  margin-bottom: var(--spacing-md);
-  letter-spacing: 0.05em;
-}
-
-.hero__companies-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-lg);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero__company-logo {
-  font-size: 12px;
-  font-weight: 600;
-  color: #666;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #fafafa;
-  transition: all 0.3s ease;
-}
-
-.hero__company-logo:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: rgba(226, 0, 62, 0.05);
-}
-
-.hero__blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.3;
-}
-
-.hero__blob--1 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, #ffb3c6, transparent);
-  top: 10%;
-  left: -5%;
-  animation: blobFloat 8s ease-in-out infinite;
-}
-
-.hero__blob--2 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, #ff6b9d, transparent);
-  bottom: 20%;
-  right: 10%;
-  animation: blobFloat 10s ease-in-out infinite reverse;
-}
-
-@keyframes blobFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(20px, -20px) scale(1.05); }
-  66% { transform: translate(-10px, 15px) scale(0.95); }
-}
-
-.hero__content {
-  position: relative;
-  z-index: 2;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: calc(100vh - 70px);
-}
-
-.hero__title {
-  font-size: clamp(36px, 6vw, 72px);
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: var(--spacing-md);
-  color: #ffffff;
-  letter-spacing: -0.01em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.hero__title-line {
+  height: auto;
   display: block;
 }
 
-.hero__subtitle {
-  font-size: clamp(14px, 2vw, 18px);
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: var(--spacing-lg);
-  max-width: 600px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.hero__actions {
-  display: flex;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.btn--line {
-  background: #06C755;
-  color: white;
-  border-color: #06C755;
-}
-
-.btn--line:hover {
-  background: #05b34c;
-  border-color: #05b34c;
-  transform: translateY(-2px);
-}
-
-.btn--sns {
-  background: #333;
-  color: white;
-  border-color: #333;
-}
-
-.btn--sns:hover {
-  background: #000;
-  border-color: #000;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 60px;
-    text-align: center;
-  }
-  .hero__container {
-    align-items: center;
-    padding: 0 var(--spacing-md);
-  }
-  .hero__actions {
-    justify-content: center;
-    width: 100%;
-  }
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* =============================================
-   FLOATING NAV
-   ============================================= */
-.floating-nav {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 900;
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.floating-nav.hidden {
-  transform: translateY(20px);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.floating-btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
-  position: relative;
+  padding: var(--spacing-xl);
+  z-index: 10;
 }
 
-.floating-btn:hover {
-  transform: scale(1.1);
-  box-shadow: var(--shadow-lg);
-}
-
-.floating-btn--line {
-  background: #06C755;
-}
-
-.floating-btn--reserve {
-  background: var(--color-primary);
-}
-
-.floating-btn--sns {
-  background: #333;
-}
-
-.floating-btn--top {
-  background: white;
-  color: var(--color-text);
-  width: 50px;
-  height: 50px;
-  margin-top: 8px;
-}
-
-.floating-btn__label {
-  position: absolute;
-  right: 70px;
-  background: rgba(0,0,0,0.8);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.floating-btn:hover .floating-btn__label {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-@media (max-width: 768px) {
-  .floating-nav {
-    bottom: 20px;
-    right: 20px;
-  }
-  .floating-btn {
-    width: 50px;
-    height: 50px;
-  }
-  .floating-btn__label {
-    display: none;
-  }
+.hero__buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-lg);
 }
 
 /* =============================================
-   ABOUT / SERVICE
+   SERVICE
    ============================================= */
 .service {
   padding: var(--spacing-2xl) 0;
-  background: var(--color-bg);
 }
 
 .service__intro {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
 }
 
 .service__intro-text {
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 16px;
   color: var(--color-text-light);
+  margin-top: var(--spacing-md);
 }
 
 .service__grid {
@@ -687,16 +286,15 @@ a {
 @media (max-width: 992px) {
   .service__grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
   }
 }
 
 .service__content-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: var(--spacing-md);
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom: var(--spacing-md);
 }
 
 .service__content-title::after {
@@ -850,12 +448,11 @@ a {
   flex: 1;
 }
 
-.reason__num {
-  font-size: 14px;
+.reason__number {
+  font-size: 48px;
   font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: 8px;
-  display: block;
+  margin-bottom: var(--spacing-sm);
 }
 
 .reason__title {
@@ -867,6 +464,7 @@ a {
 .reason__text {
   font-size: 16px;
   color: var(--color-text-light);
+  line-height: 1.8;
 }
 
 /* =============================================
@@ -874,51 +472,71 @@ a {
    ============================================= */
 .flow {
   padding: var(--spacing-2xl) 0;
-  background: var(--color-bg-light);
+  background: var(--color-bg-gray);
 }
 
-.flow__steps {
+.flow__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--spacing-sm);
-  position: relative;
+  gap: var(--spacing-md);
 }
 
 @media (max-width: 992px) {
-  .flow__steps {
+  .flow__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .flow__grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
   }
 }
 
 .flow__step {
   background: white;
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
   text-align: center;
-  box-shadow: var(--shadow-sm);
   position: relative;
-  z-index: 2;
 }
 
-.flow__step-num {
+.flow__step::after {
+  content: '→';
+  position: absolute;
+  right: -28px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 24px;
-  font-weight: 700;
-  color: #eee;
-  margin-bottom: 8px;
-}
-
-.flow__step-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 12px;
   color: var(--color-primary);
 }
 
-.flow__step-text {
-  font-size: 13px;
+.flow__step:last-child::after {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .flow__step::after {
+    display: none;
+  }
+}
+
+.flow__number {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.flow__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.flow__text {
+  font-size: 14px;
   color: var(--color-text-light);
-  text-align: left;
 }
 
 /* =============================================
@@ -928,26 +546,41 @@ a {
   padding: var(--spacing-2xl) 0;
 }
 
+.companies__intro {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
 .companies__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .companies__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.companies__item {
-  background: var(--color-bg-gray);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
+@media (max-width: 640px) {
+  .companies__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.companies__category {
+  background: var(--color-bg-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
   text-align: center;
+}
+
+.companies__category-title {
+  font-size: 16px;
   font-weight: 700;
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
 .companies__stats {
@@ -957,25 +590,26 @@ a {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .companies__stats {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
   }
 }
 
-.companies__stat-num {
-  font-size: 48px;
+.companies__stat {
+  padding: var(--spacing-md);
+}
+
+.companies__stat-number {
+  font-size: 32px;
   font-weight: 700;
   color: var(--color-primary);
-  display: block;
-  line-height: 1;
-  margin-bottom: 8px;
 }
 
 .companies__stat-label {
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: var(--color-text-light);
+  margin-top: var(--spacing-sm);
 }
 
 /* =============================================
@@ -989,7 +623,7 @@ a {
 .voice__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
 @media (max-width: 992px) {
@@ -1000,48 +634,21 @@ a {
 
 .voice__card {
   background: white;
-  padding: var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  position: relative;
-}
-
-.voice__card::before {
-  content: '"';
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 60px;
-  color: var(--color-primary-pale);
-  font-family: serif;
-  line-height: 1;
 }
 
 .voice__text {
   font-size: 15px;
-  line-height: 1.8;
+  color: var(--color-text);
   margin-bottom: var(--spacing-md);
-  position: relative;
-  z-index: 2;
+  line-height: 1.8;
 }
 
-.voice__user {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.voice__user-info {
+.voice__meta {
   font-size: 13px;
-}
-
-.voice__user-name {
-  font-weight: 700;
-  display: block;
-}
-
-.voice__user-meta {
-  color: var(--color-text-muted);
+  color: var(--color-text-light);
 }
 
 /* =============================================
@@ -1051,258 +658,295 @@ a {
   padding: var(--spacing-2xl) 0;
 }
 
-.faq__list {
+.faq__grid {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .faq__item {
+  margin-bottom: var(--spacing-lg);
   border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-lg);
+}
+
+.faq__item:last-child {
+  border-bottom: none;
 }
 
 .faq__question {
+  background: none;
+  border: none;
   width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
   padding: var(--spacing-md) 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-size: 16px;
-  font-weight: 700;
-  transition: color 0.3s ease;
+  transition: color var(--transition);
 }
 
 .faq__question:hover {
   color: var(--color-primary);
 }
 
-.faq__icon {
-  font-size: 20px;
-  color: var(--color-primary);
-  transition: transform 0.3s ease;
-}
-
-.faq__item.active .faq__icon {
-  transform: rotate(45deg);
-}
-
 .faq__answer {
+  font-size: 15px;
+  color: var(--color-text-light);
+  line-height: 1.8;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background: var(--color-bg-light);
-  border-radius: var(--radius-md);
 }
 
-.faq__item.active .faq__answer {
-  max-height: 200px;
+.faq__answer.active {
+  max-height: 500px;
   margin-bottom: var(--spacing-md);
 }
 
-.faq__answer-inner {
-  padding: var(--spacing-md);
-  font-size: 15px;
-  color: var(--color-text-light);
-}
-
 /* =============================================
-   ACTION POINT
+   CTA
    ============================================= */
-.action-point {
-  padding: var(--spacing-xl) 0;
-  background: var(--color-primary);
-  color: white;
+.cta {
+  padding: var(--spacing-2xl) 0;
   text-align: center;
 }
 
-.action-point--3 {
-  background: #333;
-}
-
-.action-point__card-title {
-  font-size: 28px;
+.cta__title {
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
-}
-
-.action-point__card-text {
-  font-size: 16px;
   margin-bottom: var(--spacing-lg);
-  opacity: 0.9;
+  line-height: 1.3;
 }
 
-.action-point__card-btns {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.btn--large {
-  padding: 18px 48px;
-  font-size: 18px;
-}
-
-.btn--outline-white {
-  background: transparent;
-  color: white;
-  border-color: white;
-}
-
-.btn--outline-white:hover {
-  background: white;
-  color: #333;
+.cta__subtitle {
+  font-size: 16px;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
 }
 
 /* =============================================
    FOOTER
    ============================================= */
 .footer {
-  padding: var(--spacing-xl) 0 var(--spacing-md);
-  background: var(--color-bg-gray);
-  border-top: 1px solid var(--color-border);
+  background: var(--color-text);
+  color: white;
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
 }
 
-.footer__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.footer__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--spacing-xl);
   margin-bottom: var(--spacing-xl);
-  flex-wrap: wrap;
-  gap: var(--spacing-lg);
-}
-
-.footer__logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.footer__logo-icon {
-  width: 40px;
-  height: 40px;
-}
-
-.footer__logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer__logo-sub {
-  font-size: 10px;
-  color: var(--color-primary);
-}
-
-.footer__logo-main {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.footer__nav {
-  display: flex;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.footer__nav-link {
-  font-size: 14px;
-  color: var(--color-text-light);
-  transition: color 0.3s ease;
-}
-
-.footer__nav-link:hover {
-  color: var(--color-primary);
-}
-
-.footer__bottom {
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-  font-size: 12px;
-  color: var(--color-text-muted);
-}
-
-.footer__copy {
-  width: 100%;
-  text-align: center;
-  margin-top: 12px;
 }
 
 @media (max-width: 768px) {
-  .footer__top {
+  .footer__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footer__logo {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer__description {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.footer__section-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer__link {
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity var(--transition);
+}
+
+.footer__link:hover {
+  opacity: 1;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .footer__bottom {
     flex-direction: column;
+    gap: var(--spacing-md);
     text-align: center;
   }
-  .footer__nav {
-    justify-content: center;
+}
+
+/* =============================================
+   FLOATING NAV
+   ============================================= */
+.floating-nav {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  z-index: 999;
+}
+
+.floating-nav.hidden {
+  display: none;
+}
+
+.floating-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
+  position: relative;
+  text-decoration: none;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.floating-btn--line {
+  background: #00B900;
+  color: white;
+}
+
+.floating-btn--reserve {
+  background: var(--color-primary);
+  color: white;
+}
+
+.floating-btn--sns {
+  background: #f0f0f0;
+  color: var(--color-text);
+}
+
+.floating-btn--top {
+  background: var(--color-primary);
+  color: white;
+}
+
+.floating-btn__label {
+  position: absolute;
+  right: 80px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.floating-btn:hover .floating-btn__label {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .floating-nav {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .floating-btn__label {
+    display: none;
+  }
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 28px;
   }
 }
   </style>
 </head>
-<body id="top">
-
+<body>
   <!-- ========== HEADER ========== -->
-  <header class="header" id="header">
-    <div class="header__inner">
-      <a href="#top" class="header__logo">
-        <img src="logo.png" alt="Well Hunting" class="header__logo-img">
-      </a>
-      <nav class="header__nav">
-        <a href="#service" class="header__nav-link">サービス</a>
-        <a href="#reason" class="header__nav-link">参加メリット</a>
-        <a href="#flow" class="header__nav-link">参加の流れ</a>
-        <a href="#faq" class="header__nav-link">よくある質問</a>
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=cLiqiL" target="_blank" class="btn btn--line" style="padding: 10px 20px; font-size: 13px;">公式LINE</a>
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary" style="padding: 10px 20px; font-size: 13px;">面談予約</a>
-      </nav>
-      <button class="header__menu-btn" id="menuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <header class="header" id="top">
+    <a href="#top" class="header__logo">
+      <img src="logo.png" alt="Well Hunting" style="height: 40px; width: auto;">
+    </a>
+    <nav class="header__nav">
+      <a href="#service">サービス</a>
+      <a href="#benefit">参加メリット</a>
+      <a href="#reason">参加の流れ</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <div class="header__actions">
+      <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=cLiqiL" target="_blank" class="btn btn--line">公式LINE</a>
+      <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary">面談予約</a>
     </div>
   </header>
 
   <!-- ========== HERO ========== -->
   <section class="hero">
-    <div class="hero__image-bg"></div>
-    <div class="hero__network">
-      <canvas id="networkCanvas"></canvas>
-    </div>
-    <div class="hero__blobs">
-      <div class="hero__blob hero__blob--1"></div>
-      <div class="hero__blob hero__blob--2"></div>
-    </div>
-    <div class="hero__container">
-      <h1 class="hero__title" style="visibility: hidden;">
-        <span class="hero__title-line">価値観で繋がる。</span>
-        <span class="hero__title-line">未来が変わる。</span>
-      </h1>
-      <p class="hero__tagline" style="visibility: hidden;">
-        就活用ではなく、<span class="hero__tagline-emphasis">いつもの自分</span>で就活しよう！<br>
-        自分らしく働ける企業と出会う、逆求人型就活イベント
-      </p>
-      <div class="hero__actions">
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=cLiqiL" target="_blank" class="btn btn--line">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.778.039 1.085l-.171 1.027c-.052.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967 1.739-1.907 2.552-3.954 2.552-5.992zm-18.864 4.146c-.422 0-.763-.341-.763-.763v-4.391c0-.422.341-.763.763-.763s.763.341.763.763v4.391c0 .422-.341.763-.763.763zm4.041 0c-.422 0-.763-.341-.763-.763v-4.391c0-.422.341-.763.763-.763s.763.341.763.763v4.391c0 .422-.341.763-.763.763zm4.041 0c-.422 0-.763-.341-.763-.763v-4.391c0-.422.341-.763.763-.763s.763.341.763.763v4.391c0 .422-.341.763-.763.763zm4.041 0c-.422 0-.763-.341-.763-.763v-4.391c0-.422.341-.763.763-.763s.763.341.763.763v4.391c0 .422-.341.763-.763.763z"/></svg>
-          公式LINE
-        </a>
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/></svg>
-          面談予約
-        </a>
-        <a href="https://lit.link/Rubyin" target="_blank" class="btn btn--sns">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
-          公式SNS
-        </a>
+    <div class="hero__image-wrapper">
+      <img src="hero-student-v2.png" alt="就活用ではなくいつもの自分で就活しよう" class="hero__image">
+      <div class="hero__overlay">
+        <div class="hero__buttons">
+          <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=cLiqiL" target="_blank" class="btn btn--line">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.778.039 1.085l-.171 1.027c-.052.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967 1.739-1.907 2.552-3.954 2.552-5.992zm-18.864 4.146c-.422 0-.763-.341-.763-.763v-4.391c0-.422.341-.763.763-.763s.763.341.763.763v4.391c0 .422-.341.763-.763.763zm4.041 0c-.422 0-.763-.341-.763-.763v-4.391c0-.422.341-.763.763-.763s.763.341.763.763v4.391c0 .422-.341.763-.763.763zm4.041 0c-.422 0-.763-.341-.763-.763v-4.391c0-.422.341-.763.763-.763s.763.341.763.763v4.391c0 .422-.341.763-.763.763zm4.041 0c-.422 0-.763-.341-.763-.763v-4.391c0-.422.341-.763.763-.763s.763.341.763.763v4.391c0 .422-.341.763-.763.763z"/></svg>
+            公式LINE
+          </a>
+          <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5v-5z"/></svg>
+            面談予約
+          </a>
+          <a href="https://lit.link/Rubyin" target="_blank" class="btn btn--sns">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            公式SNS
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1353,10 +997,7 @@ a {
             ウェルハンティングはターゲット企業に必ず出会うことができ、1対1で自分の魅力を訴求することができる逆求人型就活サービスです。弊社担当が内定獲得までのサポートを手厚く行います。
           </p>
           <div class="service__actions">
-            <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary">
-              無料で面談予約する
-              <span class="btn__arrow">→</span>
-            </a>
+            <a href="#benefit" class="btn btn--primary">詳しくはこちら →</a>
           </div>
         </div>
       </div>
@@ -1364,37 +1005,32 @@ a {
   </section>
 
   <!-- ========== BENEFIT ========== -->
-  <section class="benefit">
+  <section class="benefit" id="benefit">
     <div class="container">
       <p class="section-label">BENEFIT</p>
       <h2 class="section-title">学生の悩み、ウェルハンティングで解決</h2>
       <div class="benefit__grid">
         <div class="benefit__card">
-          <div class="benefit__card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          </div>
+          <div class="benefit__card-icon">🎯</div>
           <h3 class="benefit__card-title">自分に合った企業に出会えない</h3>
-          <p class="benefit__card-text">ナビサイトでの一斉応募では、自分の価値観や強みを活かせる企業を見つけることが難しく、就活が長期化してしまう。</p>
+          <p class="benefit__card-text">
+            ナビサイトでの一斉応募では、自分の価値観や強みを活かせる企業を見つけることが難しく、就活が長期化してしまう。
+          </p>
         </div>
         <div class="benefit__card">
-          <div class="benefit__card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
+          <div class="benefit__card-icon">💼</div>
           <h3 class="benefit__card-title">企業の本音がわからない</h3>
-          <p class="benefit__card-text">説明会では一方的な情報しか得られず、実際の職場環境や社風、求める人物像などのリアルな情報が得られない。</p>
+          <p class="benefit__card-text">
+            説明会では一方的な情報しか得られず、実際の職場環境や社風、求める人物像などのリアルな情報が得られない。
+          </p>
         </div>
         <div class="benefit__card">
-          <div class="benefit__card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-          </div>
+          <div class="benefit__card-icon">⭐</div>
           <h3 class="benefit__card-title">自己PRのチャンスが少ない</h3>
-          <p class="benefit__card-text">エントリーシートや短時間の面接では、自分の強みや個性を十分に伝えることができず、選考で埋もれてしまう。</p>
+          <p class="benefit__card-text">
+            エントリーシートや短時間の面接では、自分の強みや個性を十分に伝えることができず、選考で埋もれてしまう。
+          </p>
         </div>
-      </div>
-      <div style="text-align: center; margin-top: var(--spacing-xl);">
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--outline-red">
-          詳しくはこちら →
-        </a>
       </div>
     </div>
   </section>
@@ -1404,13 +1040,13 @@ a {
     <div class="container">
       <p class="section-label">REASON</p>
       <h2 class="section-title">選ばれる3つの理由</h2>
-      
+
       <div class="reason__item">
         <div class="reason__visual">
-          <img src="reason-1.jpg" alt="価値観マッチ" class="reason__image">
+          <img src="reason-1.jpg" alt="理由1" class="reason__image">
         </div>
         <div class="reason__content">
-          <span class="reason__num">REASON. 01</span>
+          <div class="reason__number">REASON. 01</div>
           <h3 class="reason__title">価値観マッチした企業に必ず出会える</h3>
           <p class="reason__text">
             このイベントは学生の志向性を元にテーマを分類しています。参加する企業は、弊社が実施する事前審査を通過する必要があります。参加企業の中から話したい企業を選んで面談をすることができます。
@@ -1420,10 +1056,10 @@ a {
 
       <div class="reason__item">
         <div class="reason__visual">
-          <img src="reason-2.jpg" alt="1on1面談" class="reason__image">
+          <img src="reason-2.jpg" alt="理由2" class="reason__image">
         </div>
         <div class="reason__content">
-          <span class="reason__num">REASON. 02</span>
+          <div class="reason__number">REASON. 02</div>
           <h3 class="reason__title">1on1で企業の魅力を直接体感</h3>
           <p class="reason__text">
             30分の個別面談と企業の情報量の豊富さから、企業のリアルを把握することが可能です。それに合わせて自分の強みをしっかりと訴求できます。通常の説明会では得られないターゲット企業との深い繋がりに繋がります。
@@ -1433,10 +1069,10 @@ a {
 
       <div class="reason__item">
         <div class="reason__visual">
-          <img src="reason-3.jpg" alt="就活サポート" class="reason__image">
+          <img src="reason-3.jpg" alt="理由3" class="reason__image">
         </div>
         <div class="reason__content">
-          <span class="reason__num">REASON. 03</span>
+          <div class="reason__number">REASON. 03</div>
           <h3 class="reason__title">弊社担当が就活をサポート</h3>
           <p class="reason__text">
             自分の魅力を的確に伝えるための参加前フォローだけでなく、内定獲得率を高めるためのイベント後のフォローも充実しております。企業との繋がりも深いため、生の情報を元に、内定承諾に繋げていくためのフォローやご提案を行います。
@@ -1451,111 +1087,108 @@ a {
     <div class="container">
       <p class="section-label">FLOW</p>
       <h2 class="section-title">参加の流れ</h2>
-      <div class="flow__steps">
+      <div class="flow__grid">
         <div class="flow__step">
-          <div class="flow__step-num">01</div>
-          <h3 class="flow__step-title">エントリー</h3>
-          <p class="flow__step-text">フォームからエントリー。志向性や強みを入力して参加申込みをします。</p>
+          <div class="flow__number">01</div>
+          <h3 class="flow__title">エントリー</h3>
+          <p class="flow__text">フォームからエントリー。志向性や強みを入力して参加申込みをします。</p>
         </div>
         <div class="flow__step">
-          <div class="flow__step-num">02</div>
-          <h3 class="flow__step-title">事前面接</h3>
-          <p class="flow__step-text">弊社担当との事前面接（約30分）で志向性を確認します。通過率は約30%です。</p>
+          <div class="flow__number">02</div>
+          <h3 class="flow__title">事前面接</h3>
+          <p class="flow__text">弊社担当との事前面接（約30分）で志向性を確認します。通過率は約30%です。</p>
         </div>
         <div class="flow__step">
-          <div class="flow__step-num">03</div>
-          <h3 class="flow__step-title">企業を選択</h3>
-          <p class="flow__step-text">参加企業の中から話したい企業を選んで面談の予約をします。</p>
+          <div class="flow__number">03</div>
+          <h3 class="flow__title">企業を選択</h3>
+          <p class="flow__text">参加企業の中から話したい企業を選んで面談の予約をします。</p>
         </div>
         <div class="flow__step">
-          <div class="flow__step-num">04</div>
-          <h3 class="flow__step-title">1on1面談</h3>
-          <p class="flow__step-text">30分間の個別面談で企業担当者と直接話します。自分の強みをしっかりアピールできます。</p>
+          <div class="flow__number">04</div>
+          <h3 class="flow__title">1on1面談</h3>
+          <p class="flow__text">30分間の個別面談で企業担当者と直接話します。自分の強みをしっかりアピールできます。</p>
         </div>
         <div class="flow__step">
-          <div class="flow__step-num">05</div>
-          <h3 class="flow__step-title">アフターフォロー</h3>
-          <p class="flow__step-text">イベント後も弊社担当が内定獲得までサポート。企業との繋がりを深めるフォローを行います。</p>
+          <div class="flow__number">05</div>
+          <h3 class="flow__title">アフターフォロー</h3>
+          <p class="flow__text">イベント後も弊社担当が内定獲得までサポート。企業との繋がりを深めるフォローを行います。</p>
         </div>
-      </div>
-      <div style="text-align: center; margin-top: var(--spacing-xl);">
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary btn--large">
-          無料でエントリーする
-        </a>
       </div>
     </div>
   </section>
 
   <!-- ========== COMPANIES ========== -->
-  <section class="companies">
+  <section class="companies" id="companies">
     <div class="container">
       <p class="section-label">COMPANIES</p>
       <h2 class="section-title">参加企業実績</h2>
       <div class="companies__grid">
-        <div class="companies__item">IT・テクノロジー</div>
-        <div class="companies__item">コンサルティング</div>
-        <div class="companies__item">メーカー</div>
-        <div class="companies__item">金融・保険</div>
-        <div class="companies__item">商社・流通</div>
-        <div class="companies__item">不動産・建設</div>
-        <div class="companies__item">広告・メディア</div>
-        <div class="companies__item">人材・教育</div>
+        <div class="companies__category">
+          <div class="companies__category-title">IT・テクノロジー</div>
+        </div>
+        <div class="companies__category">
+          <div class="companies__category-title">コンサルティング</div>
+        </div>
+        <div class="companies__category">
+          <div class="companies__category-title">メーカー</div>
+        </div>
+        <div class="companies__category">
+          <div class="companies__category-title">金融・保険</div>
+        </div>
+        <div class="companies__category">
+          <div class="companies__category-title">商社・流通</div>
+        </div>
+        <div class="companies__category">
+          <div class="companies__category-title">不動産・建設</div>
+        </div>
+        <div class="companies__category">
+          <div class="companies__category-title">広告・メディア</div>
+        </div>
+        <div class="companies__category">
+          <div class="companies__category-title">人材・教育</div>
+        </div>
       </div>
       <div class="companies__stats">
         <div class="companies__stat">
-          <span class="companies__stat-num">500社+</span>
-          <span class="companies__stat-label">累計参加企業数</span>
+          <div class="companies__stat-number">500社+</div>
+          <div class="companies__stat-label">累計参加企業数</div>
         </div>
         <div class="companies__stat">
-          <span class="companies__stat-num">2,000名+</span>
-          <span class="companies__stat-label">累計参加学生数</span>
+          <div class="companies__stat-number">2,000名+</div>
+          <div class="companies__stat-label">累計参加学生数</div>
         </div>
         <div class="companies__stat">
-          <span class="companies__stat-num">85%</span>
-          <span class="companies__stat-label">企業満足度</span>
+          <div class="companies__stat-number">85%</div>
+          <div class="companies__stat-label">企業満足度</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== VOICE ========== -->
-  <section class="voice">
+  <section class="voice" id="voice">
     <div class="container">
       <p class="section-label">VOICE</p>
       <h2 class="section-title">参加学生の声</h2>
       <div class="voice__grid">
         <div class="voice__card">
-          <p class="voice__text">自分の価値観を理解してくれた企業と出会えて、就活の方向性が明確になりました。1on1だからこそ本音で話せる環境が良かったです。</p>
-          <div class="voice__user">
-            <div class="voice__user-info">
-              <span class="voice__user-name">文系学部 4年生</span>
-              <span class="voice__user-meta">関東圏 私立大学</span>
-            </div>
-          </div>
+          <p class="voice__text">
+            自分の価値観を理解してくれた企業と出会えて、就活の方向性が明確になりました。1on1だからこそ本音で話せる環境が良かったです。
+          </p>
+          <p class="voice__meta">文系学部 4年生 関東圏 私立大学</p>
         </div>
         <div class="voice__card">
-          <p class="voice__text">説明会では聞けないような企業のリアルな話が聞けました。弊社担当のサポートも手厚く、内定まで安心して就活を進められました。</p>
-          <div class="voice__user">
-            <div class="voice__user-info">
-              <span class="voice__user-name">理系学部 4年生</span>
-              <span class="voice__user-meta">関西圏 国立大学</span>
-            </div>
-          </div>
+          <p class="voice__text">
+            説明会では聞けないような企業のリアルな話が聞けました。弊社担当のサポートも手厚く、内定まで安心して就活を進められました。
+          </p>
+          <p class="voice__meta">理系学部 4年生 関西圏 国立大学</p>
         </div>
         <div class="voice__card">
-          <p class="voice__text">事前面接があることで、参加企業の質が高く、真剣に採用を考えている企業ばかりでした。短期間で第一志望の内定をもらえました。</p>
-          <div class="voice__user">
-            <div class="voice__user-info">
-              <span class="voice__user-name">文系学部 3年生</span>
-              <span class="voice__user-meta">東海圏 私立大学</span>
-            </div>
-          </div>
+          <p class="voice__text">
+            事前面接があることで、参加企業の質が高く、真剣に採用を考えている企業ばかりでした。短期間で第一志望の内定をもらえました。
+          </p>
+          <p class="voice__meta">文系学部 3年生 東海圏 私立大学</p>
         </div>
-      </div>
-      <div style="text-align: center; margin-top: var(--spacing-xl);">
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary btn--large">
-          無料でエントリーする
-        </a>
       </div>
     </div>
   </section>
@@ -1565,182 +1198,124 @@ a {
     <div class="container">
       <p class="section-label">FAQ</p>
       <h2 class="section-title">よくある質問</h2>
-      <div class="faq__list">
+      <div class="faq__grid">
         <div class="faq__item">
-          <button class="faq__question">
-            Q 参加費用はかかりますか？
-            <span class="faq__icon">+</span>
+          <button class="faq__question" onclick="toggleFAQ(this)">
+            <span>Q 参加費用はかかりますか？</span>
+            <span>+</span>
           </button>
           <div class="faq__answer">
-            <div class="faq__answer-inner">
-              学生の皆様はすべてのサービスを無料でご利用いただけます。
-            </div>
+            学生の皆様はすべてのサービスを無料でご利用いただけます。
           </div>
         </div>
         <div class="faq__item">
-          <button class="faq__question">
-            Q 事前面接の通過率はどのくらいですか？
-            <span class="faq__icon">+</span>
+          <button class="faq__question" onclick="toggleFAQ(this)">
+            <span>Q 事前面接の通過率はどのくらいですか？</span>
+            <span>+</span>
           </button>
           <div class="faq__answer">
-            <div class="faq__answer-inner">
-              志向性や意欲を確認させていただいており、現在の通過率は約30%となっております。
-            </div>
+            志向性や意欲を確認させていただいており、現在の通過率は約30%となっております。
           </div>
         </div>
         <div class="faq__item">
-          <button class="faq__question">
-            Q どんな企業が参加していますか？
-            <span class="faq__icon">+</span>
+          <button class="faq__question" onclick="toggleFAQ(this)">
+            <span>Q どんな企業が参加していますか？</span>
+            <span>+</span>
           </button>
           <div class="faq__answer">
-            <div class="faq__answer-inner">
-              大手企業から成長著しいベンチャー企業まで、弊社の審査を通過した優良企業が多数参加しています。
-            </div>
+            大手企業から成長著しいベンチャー企業まで、弊社の審査を通過した優良企業が多数参加しています。
           </div>
         </div>
         <div class="faq__item">
-          <button class="faq__question">
-            Q オンラインでも参加できますか？
-            <span class="faq__icon">+</span>
+          <button class="faq__question" onclick="toggleFAQ(this)">
+            <span>Q オンラインでも参加できますか？</span>
+            <span>+</span>
           </button>
           <div class="faq__answer">
-            <div class="faq__answer-inner">
-              はい、多くのイベントや面談がオンラインに対応しておりますので、全国どこからでも参加可能です。
-            </div>
+            はい、多くのイベントや面談がオンラインに対応しておりますので、全国どこからでも参加可能です。
           </div>
         </div>
         <div class="faq__item">
-          <button class="faq__question">
-            Q 就活の時期はいつから参加できますか？
-            <span class="faq__icon">+</span>
+          <button class="faq__question" onclick="toggleFAQ(this)">
+            <span>Q 就活の時期はいつから参加できますか？</span>
+            <span>+</span>
           </button>
           <div class="faq__answer">
-            <div class="faq__answer-inner">
-              3年生（修士1年生）から参加可能です。早期からのキャリア形成をサポートいたします。
-            </div>
+            3年生（修士1年生）から参加可能です。早期からのキャリア形成をサポートいたします。
           </div>
         </div>
-      </div>
-      <div style="text-align: center; margin-top: var(--spacing-xl);">
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary btn--large">
-          無料でエントリーする
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- ========== ACTION POINT 3 ========== -->
-  <section class="action-point action-point--3">
+  <!-- ========== CTA ========== -->
+  <section class="cta">
     <div class="container">
-      <div class="action-point__card">
-        <div class="action-point__card-content">
-          <h3 class="action-point__card-title">あなたの未来を、ここから始めよう</h3>
-          <p class="action-point__card-text">価値観で繋がる新しい就活体験を、今すぐスタート。</p>
-          <div class="action-point__card-btns">
-            <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary btn--large">無料でエントリーする</a>
-            <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=cLiqiL" target="_blank" class="btn btn--outline-white btn--large">LINEで相談する</a>
-          </div>
-        </div>
-      </div>
+      <h2 class="cta__title">価値観で繋がる新しい就活体験を、<br>今すぐスタート。</h2>
+      <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="btn btn--primary" style="font-size: 16px; padding: 16px 40px;">無料でエントリーする</a>
     </div>
   </section>
-
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
-    <div class="footer__top">
-      <a href="#top" class="footer__logo">
-        <div class="footer__logo-icon">
-          <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
-            <rect width="36" height="36" rx="4" fill="#E2003E"/>
-            <path d="M8 10 L13 24 L18 14 L23 24 L28 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <div class="footer__logo">価値観で繋がる。未来が変わる。<br>Well Hunting</div>
+          <p class="footer__description">
+            「自分の価値観に合った企業で活躍したい」という学生のニーズに応える逆求人型就活イベント。
+          </p>
         </div>
-        <div class="footer__logo-text">
-          <span class="footer__logo-sub">価値観で繋がる。未来が変わる。</span>
-          <span class="footer__logo-main">Well Hunting</span>
+        <div>
+          <div class="footer__section-title">サービス</div>
+          <div class="footer__links">
+            <a href="#service" class="footer__link">サービス</a>
+            <a href="#benefit" class="footer__link">参加メリット</a>
+            <a href="#reason" class="footer__link">参加の流れ</a>
+            <a href="#faq" class="footer__link">エントリー</a>
+          </div>
         </div>
-      </a>
-      <nav class="footer__nav">
-        <a href="#service" class="footer__nav-link">サービス</a>
-        <a href="#reason" class="footer__nav-link">参加メリット</a>
-        <a href="#flow" class="footer__nav-link">参加の流れ</a>
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="footer__nav-link">エントリー</a>
-        <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" target="_blank" class="footer__nav-link">お問い合わせ</a>
-      </nav>
-    </div>
-    <div class="footer__bottom">
-      <a href="#" class="footer__policy">プライバシーポリシー</a>
-      <span class="footer__sep">｜</span>
-      <a href="#" class="footer__company">運営会社</a>
-      <p class="footer__copy">© 2023 RUBYIN CORP.</p>
+        <div>
+          <div class="footer__section-title">その他</div>
+          <div class="footer__links">
+            <a href="#" class="footer__link">お問い合わせ</a>
+            <a href="#" class="footer__link">プライバシーポリシー</a>
+            <a href="#" class="footer__link">運営会社</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 Well Hunting. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
-
   <script>
-/* =============================================
-   WELL HUNTING FOR STUDENTS - JAVASCRIPT
-   ============================================= */
-
-document.addEventListener('DOMContentLoaded', () => {
-  // --- Header Scroll Effect ---
-  const header = document.getElementById('header');
-  const floatingNav = document.getElementById('floatingNav');
-  
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-      floatingNav.classList.remove('hidden');
-    } else {
-      header.classList.remove('scrolled');
-      floatingNav.classList.add('hidden');
-    }
-  });
-
-  // --- Mobile Menu Toggle ---
-  const menuBtn = document.getElementById('menuBtn');
-  const nav = document.querySelector('.header__nav');
-  
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('active');
-    // In a real implementation, you'd show a mobile menu overlay here
-    alert('モバイルメニューは開発中です。スクロールして各セクションをご覧ください。');
-  });
-
-  // --- FAQ Accordion ---
-  const faqQuestions = document.querySelectorAll('.faq__question');
-  
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-      const item = question.parentElement;
-      item.classList.toggle('active');
+    // FAQ Toggle
+    function toggleFAQ(button) {
+      const answer = button.nextElementSibling;
+      const isActive = answer.classList.contains('active');
       
-      // Close other items
-      faqQuestions.forEach(otherQuestion => {
-        if (otherQuestion !== question) {
-          otherQuestion.parentElement.classList.remove('active');
-        }
+      // Close all other FAQs
+      document.querySelectorAll('.faq__answer').forEach(a => {
+        a.classList.remove('active');
       });
-    });
-  });
+      
+      // Toggle current FAQ
+      if (!isActive) {
+        answer.classList.add('active');
+      }
+    }
 
-  // --- Smooth Scroll for Anchor Links ---
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 80,
-          behavior: 'smooth'
-        });
+    // Floating Nav Toggle
+    const floatingNav = document.getElementById('floatingNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        floatingNav.classList.remove('hidden');
+      } else {
+        floatingNav.classList.add('hidden');
       }
     });
-  });
-});
   </script>
 </body>
 </html>
