@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>【ウェルハンティング】当日スケジュール ＆ 事前準備ガイド</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,7 +16,7 @@
       font-family: 'Noto Sans JP', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.8;
       color: #333;
-      background: #fafafa;
+      background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
       min-height: 100vh;
       padding: 20px;
     }
@@ -24,75 +25,171 @@
       max-width: 900px;
       margin: 0 auto;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(226, 0, 62, 0.08);
       overflow: hidden;
     }
 
-    header {n      background: linear-gradient(135deg, #E2003E 0%, #ff4d76 100%);n      color: white;n      padding: 40px 20px;n      text-align: center;n    }
+    header {
+      background: linear-gradient(135deg, #E2003E 0%, #ff4d76 100%);
+      color: white;
+      padding: 50px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
 
     header h1 {
-      font-size: 28px;
+      font-size: 32px;
       margin-bottom: 10px;
       font-weight: 700;
+      position: relative;
+      z-index: 1;
     }
 
     header p {
       font-size: 14px;
       opacity: 0.95;
+      position: relative;
+      z-index: 1;
     }
 
     .content {
-      padding: 40px 30px;
+      padding: 50px 40px;
     }
 
     section {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
+      position: relative;
     }
 
     section:last-child {
       margin-bottom: 0;
     }
 
-    h2 {n      font-size: 24px;n      color: #E2003E;n      margin-bottom: 20px;n      padding-bottom: 10px;n      border-bottom: 3px solid #1DB446;n      display: inline-block;n    }
+    section::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 30px;
+      background: linear-gradient(180deg, #E2003E 0%, #1DB446 100%);
+      border-radius: 2px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #E2003E;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #E2003E;
+      display: inline-block;
+      font-weight: 700;
+    }
 
     h3 {
       font-size: 18px;
       color: #333;
-      margin-top: 20px;
-      margin-bottom: 12px;
+      margin-top: 25px;
+      margin-bottom: 15px;
       display: flex;
       align-items: center;
+      font-weight: 600;
     }
 
-    h3::before {n      content: '';n      display: inline-block;n      width: 8px;n      height: 8px;n      background: #1DB446;n      border-radius: 50%;n      margin-right: 10px;n    }
+    h3::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(135deg, #E2003E 0%, #ff4d76 100%);
+      border-radius: 50%;
+      margin-right: 12px;
+      box-shadow: 0 2px 8px rgba(226, 0, 62, 0.2);
+    }
 
     p {
       margin-bottom: 15px;
       font-size: 15px;
       line-height: 1.8;
+      color: #555;
     }
 
-    .highlight {n      background: #fce8ed;n      padding: 20px;n      border-left: 4px solid #1DB446;n      margin: 20px 0;n      border-radius: 4px;n    }nn    .highlight strong {n      color: #E2003E;n    }
+    .highlight {
+      background: linear-gradient(135deg, #fce8ed 0%, #fff5f7 100%);
+      padding: 25px;
+      border-left: 5px solid #E2003E;
+      margin: 25px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(226, 0, 62, 0.08);
+    }
+
+    .highlight strong {
+      color: #E2003E;
+      font-weight: 700;
+    }
 
     .timeline {
-      margin: 20px 0;
-      padding-left: 20px;
+      margin: 25px 0;
+      padding-left: 0;
     }
 
     .timeline-item {
-      margin-bottom: 15px;
-      padding-left: 20px;
+      margin-bottom: 20px;
+      padding-left: 35px;
       position: relative;
+      background: linear-gradient(90deg, rgba(226, 0, 62, 0.02) 0%, transparent 100%);
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-right: 15px;
+      border-radius: 6px;
     }
 
-    .timeline-item::before {n      content: '';n      position: absolute;n      left: 0;n      top: 5px;n      width: 10px;n      height: 10px;n      background: #1DB446;n      border-radius: 50%;n    }nn    .timeline-item strong {n      color: #333;n    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 14px;
+      height: 14px;
+      background: #E2003E;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(226, 0, 62, 0.1);
+    }
+
+    .timeline-item strong {
+      color: #333;
+      font-weight: 600;
+    }
 
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      margin: 20px 0;
+      margin: 25px 0;
     }
 
     @media (max-width: 768px) {
@@ -101,79 +198,179 @@
       }
     }
 
-    .card {n      background: #f5f5f5;n      padding: 20px;n      border-radius: 8px;n      border-left: 4px solid #1DB446;n    }nn    .card h4 {n      color: #E2003E;n      margin-bottom: 10px;n      font-size: 16px;n    }
+    .card {
+      background: linear-gradient(135deg, #fff9fb 0%, #f5f5f5 100%);
+      padding: 25px;
+      border-radius: 10px;
+      border: 2px solid #E2003E;
+      border-left: 5px solid #E2003E;
+      box-shadow: 0 4px 12px rgba(226, 0, 62, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(226, 0, 62, 0.15);
+    }
+
+    .card h4 {
+      color: #E2003E;
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 700;
+    }
 
     .card p {
       font-size: 14px;
       margin-bottom: 8px;
+      color: #666;
     }
 
-    .step-number {n      display: inline-block;n      background: #1DB446;n      color: white;n      width: 32px;n      height: 32px;n      border-radius: 50%;n      text-align: center;n      line-height: 32px;n      font-weight: 700;n      margin-right: 10px;n    }
+    .step-number {
+      display: inline-block;
+      background: linear-gradient(135deg, #E2003E 0%, #ff4d76 100%);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 36px;
+      font-weight: 700;
+      margin-right: 10px;
+      box-shadow: 0 4px 12px rgba(226, 0, 62, 0.3);
+    }
 
     .button-group {
       display: flex;
       gap: 15px;
-      margin: 20px 0;
+      margin: 25px 0;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
-      border-radius: 6px;
+      padding: 14px 28px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       font-size: 14px;
       transition: all 0.3s ease;
       border: none;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(226, 0, 62, 0.2);
     }
 
-    .btn-primary {n      background: #E2003E;n      color: white;n    }nn    .btn-primary:hover {n      background: #b8002f;n      transform: translateY(-2px);n      box-shadow: 0 5px 15px rgba(226, 0, 62, 0.3);n    }nn    .btn-secondary {n      background: #1DB446;n      color: white;n    }nn    .btn-secondary:hover {n      background: #17923a;n      transform: translateY(-2px);n      box-shadow: 0 5px 15px rgba(29, 180, 70, 0.3);n    }
+    .btn-primary {
+      background: linear-gradient(135deg, #E2003E 0%, #ff4d76 100%);
+      color: white;
+    }
 
-    .warning {n      background: #fce8ed;n      border-left: 4px solid #E2003E;n      padding: 15px;n      margin: 15px 0;n      border-radius: 4px;n    }nn    .warning strong {n      color: #E2003E;n    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(226, 0, 62, 0.4);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #1DB446 0%, #2dd65f 100%);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(29, 180, 70, 0.4);
+    }
+
+    .warning {
+      background: linear-gradient(135deg, #fce8ed 0%, #fff5f7 100%);
+      border-left: 5px solid #E2003E;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(226, 0, 62, 0.08);
+    }
+
+    .warning strong {
+      color: #E2003E;
+      font-weight: 700;
+    }
 
     footer {
-      background: #f8f9fa;
-      padding: 20px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+      padding: 30px;
       text-align: center;
       font-size: 12px;
-      color: #666;
-      border-top: 1px solid #e0e0e0;
+      color: #999;
+      border-top: 2px solid #E2003E;
     }
 
     .link-box {
-      background: #f5f5f5;
-      padding: 15px;
-      border-radius: 6px;
-      margin: 10px 0;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fff9fb 100%);
+      padding: 18px;
+      border-radius: 8px;
+      margin: 15px 0;
       word-break: break-all;
+      border: 2px solid #E2003E;
+      transition: all 0.3s ease;
     }
 
-    .embed-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin: 20px 0;
-      border-radius: 8px;
+    .link-box:hover {
+      background: linear-gradient(135deg, #fff9fb 0%, #fce8ed 100%);
+      box-shadow: 0 4px 12px rgba(226, 0, 62, 0.15);
     }
 
-    .embed-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 8px;
+    .link-box a {
+      color: #E2003E;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
     }
-
-    .link-box a {n      color: #E2003E;n      text-decoration: none;n      font-weight: 600;n    }
 
     .link-box a:hover {
       text-decoration: underline;
+    }
+
+    .section-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #E2003E 0%, #ff4d76 100%);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: white;
+      font-weight: 700;
+      margin-right: 12px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: #666;
+    }
+
+    .decoration {
+      position: absolute;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -250,7 +447,7 @@
           <div class="timeline-item">
             <strong>ステップ1：会員登録</strong><br>
             <div class="link-box">
-              <a href="https://navi.rubyin.co.jp/2-register" target="_blank">https://navi.rubyin.co.jp/2-register</a>
+              <a href="https://navi.rubyin.co.jp/2-register" target="_blank">🔗 https://navi.rubyin.co.jp/2-register</a>
             </div>
             から登録してください。
           </div>
@@ -263,7 +460,7 @@
           <div class="timeline-item">
             <strong>ステップ3：ログイン</strong><br>
             <div class="link-box">
-              <a href="https://navi.rubyin.co.jp/2-login" target="_blank">https://navi.rubyin.co.jp/2-login</a>
+              <a href="https://navi.rubyin.co.jp/2-login" target="_blank">🔗 https://navi.rubyin.co.jp/2-login</a>
             </div>
             からログインしてください。
           </div>
@@ -286,7 +483,7 @@
 
         <h3>動画例</h3>
         <div class="link-box">
-          <a href="https://youtu.be/gCmm0MzcocI?si=nJa31APxRirK8lSg" target="_blank">https://youtu.be/gCmm0MzcocI?si=nJa31APxRirK8lSg</a>
+          <a href="https://youtu.be/gCmm0MzcocI?si=nJa31APxRirK8lSg" target="_blank">▶️ 動画を見る（YouTube）</a>
         </div>
 
         <h3>原稿構成</h3>
@@ -353,7 +550,7 @@
           <p>✓ <strong>デザイン</strong>：信頼感・誠実さ・プロフェッショナルさを大切にしながら、<strong>自分らしさが表現されているデザイン</strong>にしてください</p>
           <p>✓ <strong>内容</strong>：1スライドにつき「3つの要点」で構成</p>
           <p>✓ <strong>言葉選び</strong>：以下の2点を重要視してください</p>
-          <ul style="margin-left: 20px; margin-top: 10px;">
+          <ul>
             <li>具体的で、自分の伝えたいことがしっかりと伝わる言葉遣いになっているか</li>
             <li>曖昧な表現になっていないか</li>
           </ul>
@@ -378,15 +575,6 @@
         <h3>最後に</h3>
         <p>このイベントは、あなたが「本当にやりたいこと」「本当に大切にしていること」を企業と共有する貴重な機会です。完璧を目指さず、<strong>ありのままの自分を表現</strong>することを心がけてください。</p>
         <p>皆様のご参加をお待ちしています！</p>
-      </section>
-
-      <!-- CTA -->
-      <section style="text-align: center; margin-top: 50px;">
-        <h2 style="border: none; display: block; margin-bottom: 20px;">ご不明な点はお気軽にお問い合わせください</h2>
-        <div class="button-group" style="justify-content: center;">
-          <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=cLiqiL" class="btn btn-primary" target="_blank">公式LINEで相談</a>
-          <a href="https://s.lmes.jp/landing-qr/2007401682-Ja2Mg94n?uLand=Ztp8LA" class="btn btn-secondary" target="_blank">面談予約</a>
-        </div>
       </section>
     </div>
 
