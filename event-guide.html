@@ -12,10 +12,10 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Noto Sans JP', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.8;
       color: #333;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      background: #fafafa;
       min-height: 100vh;
       padding: 20px;
     }
@@ -29,12 +29,7 @@
       overflow: hidden;
     }
 
-    header {
-      background: linear-gradient(135deg, #d4145a 0%, #fbb03b 100%);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
+    header {n      background: linear-gradient(135deg, #E2003E 0%, #ff4d76 100%);n      color: white;n      padding: 40px 20px;n      text-align: center;n    }
 
     header h1 {
       font-size: 28px;
@@ -59,14 +54,7 @@
       margin-bottom: 0;
     }
 
-    h2 {
-      font-size: 24px;
-      color: #d4145a;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #fbb03b;
-      display: inline-block;
-    }
+    h2 {n      font-size: 24px;n      color: #E2003E;n      margin-bottom: 20px;n      padding-bottom: 10px;n      border-bottom: 3px solid #1DB446;n      display: inline-block;n    }
 
     h3 {
       font-size: 18px;
@@ -77,15 +65,7 @@
       align-items: center;
     }
 
-    h3::before {
-      content: '';
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: #d4145a;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
+    h3::before {n      content: '';n      display: inline-block;n      width: 8px;n      height: 8px;n      background: #1DB446;n      border-radius: 50%;n      margin-right: 10px;n    }
 
     p {
       margin-bottom: 15px;
@@ -93,17 +73,7 @@
       line-height: 1.8;
     }
 
-    .highlight {
-      background: #fff3cd;
-      padding: 20px;
-      border-left: 4px solid #fbb03b;
-      margin: 20px 0;
-      border-radius: 4px;
-    }
-
-    .highlight strong {
-      color: #d4145a;
-    }
+    .highlight {n      background: #fce8ed;n      padding: 20px;n      border-left: 4px solid #1DB446;n      margin: 20px 0;n      border-radius: 4px;n    }nn    .highlight strong {n      color: #E2003E;n    }
 
     .timeline {
       margin: 20px 0;
@@ -116,20 +86,7 @@
       position: relative;
     }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 5px;
-      width: 10px;
-      height: 10px;
-      background: #d4145a;
-      border-radius: 50%;
-    }
-
-    .timeline-item strong {
-      color: #d4145a;
-    }
+    .timeline-item::before {n      content: '';n      position: absolute;n      left: 0;n      top: 5px;n      width: 10px;n      height: 10px;n      background: #1DB446;n      border-radius: 50%;n    }nn    .timeline-item strong {n      color: #333;n    }
 
     .grid {
       display: grid;
@@ -144,36 +101,14 @@
       }
     }
 
-    .card {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 4px solid #d4145a;
-    }
-
-    .card h4 {
-      color: #d4145a;
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
+    .card {n      background: #f5f5f5;n      padding: 20px;n      border-radius: 8px;n      border-left: 4px solid #1DB446;n    }nn    .card h4 {n      color: #E2003E;n      margin-bottom: 10px;n      font-size: 16px;n    }
 
     .card p {
       font-size: 14px;
       margin-bottom: 8px;
     }
 
-    .step-number {
-      display: inline-block;
-      background: #d4145a;
-      color: white;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 32px;
-      font-weight: 700;
-      margin-right: 10px;
-    }
+    .step-number {n      display: inline-block;n      background: #1DB446;n      color: white;n      width: 32px;n      height: 32px;n      border-radius: 50%;n      text-align: center;n      line-height: 32px;n      font-weight: 700;n      margin-right: 10px;n    }
 
     .button-group {
       display: flex;
@@ -194,39 +129,9 @@
       cursor: pointer;
     }
 
-    .btn-primary {
-      background: #d4145a;
-      color: white;
-    }
+    .btn-primary {n      background: #E2003E;n      color: white;n    }nn    .btn-primary:hover {n      background: #b8002f;n      transform: translateY(-2px);n      box-shadow: 0 5px 15px rgba(226, 0, 62, 0.3);n    }nn    .btn-secondary {n      background: #1DB446;n      color: white;n    }nn    .btn-secondary:hover {n      background: #17923a;n      transform: translateY(-2px);n      box-shadow: 0 5px 15px rgba(29, 180, 70, 0.3);n    }
 
-    .btn-primary:hover {
-      background: #b00d47;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(212, 20, 90, 0.3);
-    }
-
-    .btn-secondary {
-      background: #fbb03b;
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      background: #f9a825;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(251, 176, 59, 0.3);
-    }
-
-    .warning {
-      background: #fff5f5;
-      border-left: 4px solid #d4145a;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 4px;
-    }
-
-    .warning strong {
-      color: #d4145a;
-    }
+    .warning {n      background: #fce8ed;n      border-left: 4px solid #E2003E;n      padding: 15px;n      margin: 15px 0;n      border-radius: 4px;n    }nn    .warning strong {n      color: #E2003E;n    }
 
     footer {
       background: #f8f9fa;
@@ -238,18 +143,34 @@
     }
 
     .link-box {
-      background: #f0f0f0;
+      background: #f5f5f5;
       padding: 15px;
       border-radius: 6px;
       margin: 10px 0;
       word-break: break-all;
     }
 
-    .link-box a {
-      color: #d4145a;
-      text-decoration: none;
-      font-weight: 600;
+    .embed-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 20px 0;
+      border-radius: 8px;
     }
+
+    .embed-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .link-box a {n      color: #E2003E;n      text-decoration: none;n      font-weight: 600;n    }
 
     .link-box a:hover {
       text-decoration: underline;
@@ -279,7 +200,7 @@
 
           <div class="timeline-item">
             <strong>9:40 - 11:30 | 企業PR・学生PR</strong><br>
-            <span style="color: #d4145a; font-weight: 600;">※学生PR：原稿の棒読みは避け、明るく・元気に・笑顔で！普段の3倍の明るさを意識！</span>
+            <span style="color: #E2003E; font-weight: 600;">※学生PR：原稿の棒読みは避け、明るく・元気に・笑顔で！普段の3倍の明るさを意識！</span>
           </div>
 
           <div class="timeline-item">
@@ -288,7 +209,7 @@
 
           <div class="timeline-item">
             <strong>12:05 - 17:25 | オファーが届いた企業と面談（最大8社）or 就活お役立ちセミナー</strong><br>
-            <span style="color: #d4145a; font-weight: 600;">※面談：全力でビジョン実現の可能性を探るのがポイント！</span>
+            <span style="color: #E2003E; font-weight: 600;">※面談：全力でビジョン実現の可能性を探るのがポイント！</span>
           </div>
 
           <div class="timeline-item">
@@ -420,12 +341,22 @@
           </div>
         </div>
 
+        <h3>スライド例</h3>
+        <p>実際のスライド例は、以下のフォルダからご確認いただけます。参考にしながら、あなたらしいプレゼンを作成してください。</p>
+        <div class="link-box">
+          <a href="https://drive.google.com/drive/folders/1Sb9uUFVWqyydcLYPaBZC5Ke501LjK9V9?usp=drive_link" target="_blank">📁 スライド例フォルダ（Google ドライブ）</a>
+        </div>
+
         <h3>作成のポイント</h3>
         <div class="highlight">
           <p>✓ <strong>サイズ</strong>：1280px × 720px の16:9比率で作成</p>
-          <p>✓ <strong>デザイン</strong>：「信頼感・誠実・プロフェッショナル」をテーマに</p>
+          <p>✓ <strong>デザイン</strong>：信頼感・誠実さ・プロフェッショナルさを大切にしながら、<strong>自分らしさが表現されているデザイン</strong>にしてください</p>
           <p>✓ <strong>内容</strong>：1スライドにつき「3つの要点」で構成</p>
-          <p>✓ <strong>言葉選び</strong>：簡潔で力強い言葉を使い、内容を膨らませすぎない</p>
+          <p>✓ <strong>言葉選び</strong>：以下の2点を重要視してください</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>具体的で、自分の伝えたいことがしっかりと伝わる言葉遣いになっているか</li>
+            <li>曖昧な表現になっていないか</li>
+          </ul>
         </div>
       </section>
 
