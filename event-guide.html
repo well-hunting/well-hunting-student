@@ -67,6 +67,23 @@
       font-weight: 700;
       position: relative;
       z-index: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 1024px) {
+      header h1 {
+        font-size: 28px;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 22px;
+        white-space: normal;
+      }
     }
 
     header p {
@@ -91,13 +108,7 @@
 
     section::before {
       content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 30px;
-      background: linear-gradient(180deg, #E2003E 0%, #1DB446 100%);
-      border-radius: 2px;
+      display: none;
     }
 
     h2 {
