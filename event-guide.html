@@ -166,29 +166,54 @@
     }
 
     .timeline {
-      margin: 20px 0;
+      margin: 30px 0;
+      position: relative;
     }
 
     .timeline-item {
-      background: #f9f9f9;
-      padding: 20px;
-      margin: 15px 0;
-      border-left: 4px solid #E2003E;
-      border-radius: 4px;
+      background: linear-gradient(135deg, #fff5f7 0%, #fffbfc 100%);
+      padding: 25px;
+      margin: 30px 0;
+      border: 2px solid #E2003E;
+      border-radius: 12px;
       color: #333;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(226, 0, 62, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      box-shadow: 0 4px 16px rgba(226, 0, 62, 0.12);
+      transform: translateY(-2px);
     }
 
     .timeline-item strong {
-      color: #333;
-      font-weight: 600;
+      color: #E2003E;
+      font-weight: 700;
+      font-size: 16px;
     }
 
     .timeline-item span {
       display: block;
-      margin-top: 8px;
+      margin-top: 12px;
       font-size: 14px;
+      color: #555;
+      font-weight: 400;
+    }
+
+    .timeline-item::after {
+      content: '\25BC';
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
       color: #E2003E;
-      font-weight: 500;
+      font-size: 18px;
+      z-index: 1;
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
     }
 
     .link-box {
