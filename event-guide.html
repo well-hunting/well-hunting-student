@@ -4,8 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ウェルハンティング概要資料</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --red: #E2003E;
+      --red-dark: #B8002F;
+      --red-pale: #FCE8ED;
+      --red-tint: #FFF4F7;
+      --red-line: #F6D3DD;
+      --ink: #17181C;
+      --body: #4B4F58;
+      --muted: #8B909A;
+      --note: #565C66;
+      --line: #ECEDF0;
+      --surface: #FFFFFF;
+      --surface-2: #FAFAFB;
+      --page: #F2F3F5;
+      --r: 14px;
+      --r-lg: 24px;
+      --shadow: 0 2px 6px rgba(20, 20, 30, 0.04), 0 18px 44px rgba(20, 20, 30, 0.07);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,83 +34,80 @@
     }
 
     body {
-      font-family: 'Noto Sans JP', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.8;
-      color: #333;
-      background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
-      min-height: 100vh;
-      padding: 20px;
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      line-height: 1.85;
+      color: var(--body);
+      background: var(--page);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      padding: 36px 16px;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 820px;
       margin: 0 auto;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(226, 0, 62, 0.08);
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
       overflow: hidden;
+      border: 1px solid rgba(20, 20, 30, 0.05);
     }
 
+    /* ---------- Header ---------- */
     header {
-      background: linear-gradient(135deg, #E2003E 0%, #ff4d76 100%);
-      color: white;
-      padding: 50px 30px;
-      text-align: center;
       position: relative;
+      background: linear-gradient(155deg, #EF0B4A 0%, #E2003E 52%, #C0002F 100%);
+      color: #fff;
+      padding: 66px 40px 58px;
+      text-align: center;
       overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
     }
 
     header::after {
       content: '';
       position: absolute;
-      bottom: -30%;
-      left: -5%;
-      width: 300px;
-      height: 300px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 50%;
+      inset: 0;
+      background: radial-gradient(130% 90% at 50% -25%, rgba(255, 255, 255, 0.20), transparent 58%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      position: relative;
+      z-index: 1;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      opacity: 0.9;
+      margin-bottom: 18px;
     }
 
     header h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-      font-weight: 700;
       position: relative;
       z-index: 1;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 24px;
-      }
+      font-size: 33px;
+      line-height: 1.4;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      margin-bottom: 14px;
     }
 
     header p {
-      font-size: 14px;
-      opacity: 1;
-      color: white;
       position: relative;
       z-index: 1;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #fff;
+      opacity: 1;
+      letter-spacing: 0.05em;
     }
 
+    /* ---------- Content ---------- */
     .content {
-      padding: 50px 40px;
+      padding: 56px 44px;
     }
 
     section {
       margin-bottom: 60px;
-      position: relative;
     }
 
     section:last-child {
@@ -97,262 +115,547 @@
     }
 
     h2 {
-      font-size: 28px;
-      color: #E2003E;
-      margin-bottom: 25px;
-      padding-bottom: 15px;
-      border-bottom: 3px solid #E2003E;
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 23px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+      margin-bottom: 26px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sec-num {
+      flex: none;
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--red);
+      color: #fff;
+      font-size: 15px;
       font-weight: 700;
+      border-radius: 10px;
     }
 
     h3 {
-      font-size: 18px;
-      color: #333;
-      margin-top: 25px;
-      margin-bottom: 15px;
       display: flex;
       align-items: center;
-      font-weight: 600;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 34px 0 16px;
+      letter-spacing: 0.01em;
     }
 
     h3::before {
       content: '';
-      display: none;
+      flex: none;
+      width: 4px;
+      height: 17px;
+      border-radius: 2px;
+      background: var(--red);
     }
 
     p {
-      margin-bottom: 15px;
       font-size: 15px;
-      line-height: 1.8;
-      color: #555;
+      line-height: 1.9;
+      color: var(--body);
+      margin-bottom: 16px;
     }
 
-    .highlight {
-      background: linear-gradient(135deg, #fce8ed 0%, #fff5f7 100%);
-      padding: 25px;
-      border-left: 5px solid #E2003E;
-      margin: 25px 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(226, 0, 62, 0.08);
+    p:last-child {
+      margin-bottom: 0;
     }
 
-    .highlight strong {
-      color: #E2003E;
+    strong {
+      color: var(--ink);
+      font-weight: 700;
     }
 
-    .prep-card {
-      background: #f9f9f9;
-      border: 2px solid #f0f0f0;
-      border-left: 5px solid #E2003E;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-      transition: all 0.3s ease;
+    .intro {
+      margin-bottom: 52px;
     }
 
-    .prep-card:hover {
-      border-color: #E2003E;
-      box-shadow: 0 4px 12px rgba(226, 0, 62, 0.1);
+    .lead-in {
+      font-size: 15.5px;
+      line-height: 1.95;
+      color: var(--ink);
+      font-weight: 500;
+      margin-bottom: 22px;
+      padding-left: 16px;
+      border-left: 3px solid var(--red);
     }
 
-    .prep-card h3 {
-      margin-top: 0;
-      color: #333;
+    .stat-callout {
+      background: linear-gradient(135deg, #FFF1F4 0%, #FFF8FA 100%);
+      border: 1px solid var(--red-line);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
     }
 
-    .prep-card p {
-      color: #555;
+    .stat-lead {
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: var(--ink);
+      font-weight: 500;
+      margin: 0 0 14px;
+    }
+
+    .stat-num {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .rank-list {
+      list-style: none;
+      margin: 0 0 12px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .rank-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      color: var(--body);
+    }
+
+    .rank {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      padding: 3px 0;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--red-line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .rank-list .rank-highlight {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .rank-list .rank-highlight .rank {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+
+    .stat-note {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.6;
       margin: 0;
     }
 
-    .timeline {
-      margin: 30px 0;
-      position: relative;
+    /* ---------- Deadline pill ---------- */
+    .deadline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red-tint);
+      color: var(--red-dark);
+      font-weight: 700;
+      font-size: 13.5px;
+      letter-spacing: 0.01em;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--red-line);
+      margin-bottom: 18px;
     }
 
-    .timeline-item {
-      background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
-      padding: 25px;
-      margin: 30px 0;
-      border: 2px solid #999;
-      border-radius: 12px;
-      color: #333;
-      position: relative;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
+    .deadline::before {
+      content: '✓';
+      font-weight: 800;
     }
 
-    .timeline-item:hover {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    /* ---------- Prep cards ---------- */
+    .prep-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 20px 22px;
+      margin-bottom: 14px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .prep-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .prep-card:hover {
+      border-color: var(--red-line);
+      box-shadow: 0 8px 24px rgba(226, 0, 62, 0.08);
       transform: translateY(-2px);
     }
 
-    .timeline-item strong {
-      color: #333;
+    .prep-num {
+      flex: none;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--red-pale);
+      color: var(--red);
       font-weight: 700;
+      font-size: 15px;
+      border-radius: 9px;
+    }
+
+    .prep-title {
+      display: block;
       font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .prep-body p {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--body);
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: var(--red);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--red);
+      word-break: break-all;
+      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+      box-shadow: 0 4px 14px rgba(226, 0, 62, 0.18);
+    }
+
+    .btn:hover {
+      background: var(--red-dark);
+      border-color: var(--red-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 7px 20px rgba(226, 0, 62, 0.26);
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-all;
+      border-bottom: 1px solid var(--red-line);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-link:hover {
+      color: var(--red-dark);
+      border-color: var(--red);
+    }
+
+    /* ---------- Timeline (steps & schedule) ---------- */
+    .timeline {
+      position: relative;
+      margin-top: 8px;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(var(--red-line), var(--line));
+    }
+
+    .timeline-item {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 21px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 3px solid var(--surface);
+      box-shadow: 0 0 0 1px var(--red-line);
+    }
+
+    .timeline-item:hover {
+      box-shadow: 0 6px 18px rgba(20, 20, 30, 0.06);
+    }
+
+    .timeline-item strong {
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 15.5px;
+    }
+
+    .timeline-item .btn-link {
+      margin: 12px 0 4px;
     }
 
     .timeline-item span {
       display: block;
-      margin-top: 12px;
+      margin-top: 8px;
+      font-size: 13.5px;
+      color: var(--note);
+      line-height: 1.7;
+    }
+
+    /* ---------- Term schedule ---------- */
+    .term-schedule {
+      display: flex;
+      gap: 14px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .term-group {
+      flex: 1;
+      min-width: 220px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .term-group-title {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 700;
+      color: var(--red);
       font-size: 14px;
-      color: #555;
-      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--red-line);
     }
 
-    .timeline-item::after {
-      content: '\25BC';
-      position: absolute;
-      bottom: -28px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #E2003E;
-      font-size: 18px;
-      z-index: 1;
+    .term-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .timeline-item:last-child::after {
+    .term-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--body);
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .term-list li::before {
       display: none;
     }
 
-    .link-box {
-      background: #fff5f7;
-      border: 2px solid #E2003E;
-      padding: 15px 20px;
-      margin: 15px 0;
-      border-radius: 8px;
-      display: inline-block;
+    .term-list li:last-child {
+      border-bottom: none;
     }
 
-    .link-box a {
-      color: #E2003E;
-      text-decoration: none;
+    .term-no {
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
+      color: var(--ink);
     }
 
-    .link-box a:hover {
-      color: #fff;
-      background: #E2003E;
-      padding: 8px 12px;
-      border-radius: 4px;
+    .term-time {
+      color: var(--note);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.02em;
     }
 
-    .video-link {
-      background: #fff5f7;
-      border: 2px solid #E2003E;
-      padding: 15px 20px;
-      margin: 15px 0;
-      border-radius: 8px;
-      display: inline-block;
-    }
-
-    .video-link a {
-      color: #E2003E;
-      text-decoration: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .video-link a:hover {
-      color: #fff;
-      background: #E2003E;
-      padding: 8px 12px;
-      border-radius: 4px;
-    }
-
-    .drive-link {
-      background: #fff5f7;
-      border: 2px solid #E2003E;
-      padding: 15px 20px;
-      margin: 15px 0;
-      border-radius: 8px;
-      display: inline-block;
-    }
-
-    .drive-link a {
-      color: #E2003E;
-      text-decoration: none;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .drive-link a:hover {
-      color: #fff;
-      background: #E2003E;
-      padding: 8px 12px;
-      border-radius: 4px;
-    }
-
-    .zoom-chat-box {
-      background: #f9f9f9;
-      border: 2px solid #f0f0f0;
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 8px;
-      font-size: 14px;
-      line-height: 1.8;
-      color: #555;
-    }
-
-    .zoom-chat-box strong {
-      color: #333;
-    }
-
+    /* ---------- Lists ---------- */
     ul {
-      margin: 15px 0 15px 25px;
-      color: #555;
+      margin: 14px 0;
+      padding: 0;
+      list-style: none;
     }
 
     ul li {
-      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 12px;
+      font-size: 14.5px;
       line-height: 1.8;
+      color: var(--body);
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 11px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
     }
 
     ul li strong {
-      color: #333;
+      color: var(--ink);
+      font-weight: 700;
     }
 
+    ul ul {
+      margin: 10px 0 4px;
+    }
+
+    ul ul li {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    ul ul li::before {
+      width: 5px;
+      height: 5px;
+      top: 11px;
+      background: var(--red-line);
+    }
+
+    /* ---------- Zoom chat sample ---------- */
+    .zoom-chat-box {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--body);
+    }
+
+    .zoom-chat-box strong {
+      color: var(--ink);
+    }
+
+    /* ---------- Caution ---------- */
     .caution {
-      background: #fff3cd;
-      border-left: 5px solid #ffc107;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 4px;
-      color: #333;
+      background: #FFF8E8;
+      border: 1px solid #F1E2AE;
+      border-left: 4px solid #E9B008;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 18px 0;
+      color: #5A4B1E;
+      font-size: 14.5px;
+      line-height: 1.85;
     }
 
     .caution strong {
-      color: #d39e00;
+      color: #B8860B;
     }
 
+    /* ---------- Closing ---------- */
+    .closing {
+      margin-top: 28px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--red);
+      letter-spacing: 0.02em;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--surface-2);
+      border-top: 1px solid var(--line);
+      padding: 28px 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.9;
+    }
+
+    /* ---------- Responsive ---------- */
     @media (max-width: 768px) {
+      body {
+        padding: 16px 10px;
+      }
+
+      .container {
+        border-radius: 18px;
+      }
+
+      header {
+        padding: 48px 24px 40px;
+      }
+
+      header h1 {
+        font-size: 25px;
+      }
+
       .content {
-        padding: 30px 20px;
+        padding: 36px 20px;
       }
 
       h2 {
-        font-size: 22px;
+        font-size: 19px;
       }
 
-      h3 {
-        font-size: 16px;
-      }
-
-      .link-box, .video-link, .drive-link {
-        display: block;
+      .btn {
         width: 100%;
+        justify-content: center;
+      }
+
+      .term-group {
+        min-width: 100%;
+      }
+
+      .stat-callout {
+        padding: 18px;
+      }
+
+      footer {
+        padding: 24px 20px;
       }
     }
   </style>
@@ -360,72 +663,87 @@
 <body>
   <div class="container">
     <header>
-      <h1>いい出会いを生むための4つの準備</h1>
+      <h1>いい出会いを生むための3つの準備</h1>
       <p>ウェルハンティング概要資料</p>
     </header>
 
     <div class="content">
+      <!-- 導入 -->
+      <div class="intro">
+        <p class="lead-in">ウェルハンティングは、「自分らしさ」を伝えて、あなたに合った企業の人事と本音でカジュアル面談ができるイベントです。</p>
+
+        <div class="stat-callout">
+          <p class="stat-lead"><span class="stat-num">約6割</span>の就活生が「就活に後悔がある」と回答しています。後悔の要因の上位3つは——</p>
+          <ol class="rank-list">
+            <li><span class="rank">1位</span>大学生活を有意義に過ごせばよかった</li>
+            <li class="rank-highlight"><span class="rank">2位</span>自己分析が不十分だった</li>
+            <li><span class="rank">3位</span>業界を絞りすぎていた</li>
+          </ol>
+          <p class="stat-note">出典：マイナビニュース「新社会人『今の会社に入社して後悔』は6割以上」（2024年）</p>
+        </div>
+      </div>
+
       <!-- セクション1: 事前準備の詳細 -->
       <section>
-        <h2>1. 4つの準備について</h2>
-        <p>✓ 完了目安：参加週の月曜 16:00<br>
-        この4つの準備がなければ、イベント当日に最高のパフォーマンスを発揮できません。早めの準備をお願いします。</p>
+        <h2><span class="sec-num">1</span>3つの準備について</h2>
+        <p>後悔のない就活にするために、まずは自己分析からしっかり準備することが大切です。この3つの準備がなければ、イベント当日に最高のパフォーマンスを発揮できません。早めの準備をお願いします。</p>
+        <div class="deadline">完了目安：参加週の月曜 16:00</div>
 
         <div class="prep-card">
-          <h3>① プロフィールの作成</h3>
-          <p>企業担当者があなたに興味を持つ最初の接点です。ガクチカや就活の軸など、背景にある「想い」まで言語化しましょう。</p>
+          <span class="prep-num">1</span>
+          <div class="prep-body">
+            <span class="prep-title">プロフィールの作成</span>
+            <p>企業担当者があなたに興味を持つ最初の接点です。ガクチカや就活の軸など、背景にある「想い」まで言語化しましょう。</p>
+          </div>
         </div>
 
         <div class="prep-card">
-          <h3>② 性格診断（ミキワメ）の受検 <span style="font-size: 12px; color: #E2003E;">※27卒のみ</span></h3>
-          <p>客観的なデータは、自分でも気づかなかった「相性の良い環境」を見つけるヒントになります。</p>
+          <span class="prep-num">2</span>
+          <div class="prep-body">
+            <span class="prep-title">1分間の学生PRの作成（午前中に全体に向けてPR）</span>
+            <p>Zoomチャットに自己紹介の要約を送信し、1分間の自己紹介を実施します。</p>
+          </div>
         </div>
 
         <div class="prep-card">
-          <h3>③ 1分間の学生PRの作成（午前中に全体に向けてPR）</h3>
-          <p>Zoomチャットに自己紹介の要約を送信し、1分間の自己紹介を実施します。</p>
-        </div>
-
-        <div class="prep-card">
-          <h3>④ 5分間の自分プレゼンの作成（午後のカジュアル面談時に使用）</h3>
-          <p>スライド資料（GoogleスライドやCanvaなど）を用いて、3〜5分の自分プレゼンを実施します。原体験、現在の価値観、将来ビジョンの一貫性を意識してください。</p>
+          <span class="prep-num">3</span>
+          <div class="prep-body">
+            <span class="prep-title">5分間の自分プレゼンの作成（午後のカジュアル面談時に使用）</span>
+            <p>スライド資料（GoogleスライドやCanvaなど）を用いて、3〜5分の自分プレゼンを実施します。原体験、現在の価値観、将来ビジョンの一貫性を意識してください。</p>
+          </div>
         </div>
       </section>
 
       <!-- セクション2: プロフィール記入用システム登録 -->
       <section>
-        <h2>2. プロフィール記入用システム登録</h2>
+        <h2><span class="sec-num">2</span>プロフィール記入用システム登録</h2>
         <p>以下の手順に従って、参加予定のイベントに登録してください。</p>
 
         <div class="timeline">
           <div class="timeline-item">
             <strong>ステップ1：会員登録</strong><br>
-            <div class="link-box">
-              <a href="https://navi.rubyin.co.jp/2-register" target="_blank">🔗 https://navi.rubyin.co.jp/2-register</a>
-            </div>
+            <a class="btn-link" href="https://navi.rubyin.co.jp/2-register" target="_blank" rel="noopener noreferrer">🔗 https://navi.rubyin.co.jp/2-register</a>
             <span>から登録してください。</span>
           </div>
 
           <div class="timeline-item">
-            <strong>ステップ2：メール確認</strong><br>
+            <strong>ステップ2：メール確認</strong>
             <span>届いたメールのリンクをクリックして、メールアドレスを確認します。</span>
           </div>
 
           <div class="timeline-item">
             <strong>ステップ3：ログイン</strong><br>
-            <div class="link-box">
-              <a href="https://navi.rubyin.co.jp/2-login" target="_blank">🔗 https://navi.rubyin.co.jp/2-login</a>
-            </div>
+            <a class="btn-link" href="https://navi.rubyin.co.jp/2-login" target="_blank" rel="noopener noreferrer">🔗 https://navi.rubyin.co.jp/2-login</a>
             <span>からログインしてください。</span>
           </div>
 
           <div class="timeline-item">
-            <strong>ステップ4：イベント選択</strong><br>
+            <strong>ステップ4：イベント選択</strong>
             <span>参加予定のイベント日程を探し、「詳細をみる」→「参加する」をクリックします。</span>
           </div>
 
           <div class="timeline-item">
-            <strong>ステップ5：完了確認</strong><br>
+            <strong>ステップ5：完了確認</strong>
             <span>「エントリーが完了しました」と表示されれば登録完了です。</span>
           </div>
         </div>
@@ -433,14 +751,12 @@
 
       <!-- セクション3: 1分間の学生PR -->
       <section>
-        <h2>3. 【例】1分間の学生PR</h2>
+        <h2><span class="sec-num">3</span>【例】1分間の学生PR</h2>
 
-        <h3>■ 動画例</h3>
-        <div class="video-link">
-          <a href="https://youtu.be/gCmm0MzcocI?si=nJa31APxRirK8lSg" target="_blank">▶️ 動画を見る（YouTube）</a>
-        </div>
+        <h3>動画例</h3>
+        <a class="btn-link" href="https://youtu.be/gCmm0MzcocI?si=nJa31APxRirK8lSg" target="_blank" rel="noopener noreferrer">▶️ 動画を見る（YouTube）</a>
 
-        <h3>■ 原稿構成</h3>
+        <h3>原稿構成</h3>
         <ul>
           <li><strong>1. 自己紹介</strong><br>大学名・学部・氏名</li>
           <li><strong>2. キャッチコピー</strong><br>例：「年中無休のサンタクロース」</li>
@@ -449,7 +765,7 @@
           <li><strong>5. 本日の意気込み</strong><br>このイベントへの想い</li>
         </ul>
 
-        <h3>■ Zoomチャット例</h3>
+        <h3>Zoomチャット例</h3>
         <div class="zoom-chat-box">
           🎯 <strong>名前</strong>：○○大学 ○○学部 ○○太郎<br>
           💡 <strong>キャッチコピー</strong>：年中無休のサンタクロース<br>
@@ -462,9 +778,9 @@
 
       <!-- セクション4: 5分間の自分プレゼン -->
       <section>
-        <h2>4. 【例】5分間の自分プレゼン</h2>
+        <h2><span class="sec-num">4</span>【例】5分間の自分プレゼン</h2>
 
-        <h3>■ プレゼン構成（アジェンダ）</h3>
+        <h3>プレゼン構成（アジェンダ）</h3>
         <ul>
           <li><strong>1. 表紙</strong>：タイトル・大学・学部・氏名</li>
           <li><strong>2. 自己紹介</strong>：簡潔な自己紹介</li>
@@ -474,13 +790,11 @@
           <li><strong>6. 逆質問</strong>：企業への質問（3つのみ）</li>
         </ul>
 
-        <h3>■ スライド例</h3>
+        <h3>スライド例</h3>
         <p>実際のスライド例は、以下のフォルダからご確認いただけます。参考にしながら、あなたらしいプレゼンを作成してください。</p>
-        <div class="drive-link">
-          <a href="https://drive.google.com/drive/folders/1Sb9uUFVWqyydcLYPaBZC5Ke501LjK9V9?usp=drive_link" target="_blank">📁 スライド例フォルダ（Google ドライブ）</a>
-        </div>
+        <a class="btn-link" href="https://drive.google.com/drive/folders/1Sb9uUFVWqyydcLYPaBZC5Ke501LjK9V9?usp=drive_link" target="_blank" rel="noopener noreferrer">📁 スライド例フォルダ（Google ドライブ）</a>
 
-        <h3>■ 作成のポイント</h3>
+        <h3>作成のポイント</h3>
         <ul>
           <li><strong>サイズ</strong>：1280px × 720px の16:9比率で作成</li>
           <li><strong>デザイン</strong>：信頼感・誠実さ・プロフェッショナルさを大切にしながら、自分らしさが表現されているデザインにしてください</li>
@@ -496,7 +810,7 @@
 
       <!-- セクション5: 当日スケジュール -->
       <section>
-        <h2>5. イベント当日のタイムスケジュール</h2>
+        <h2><span class="sec-num">5</span>イベント当日のタイムスケジュール</h2>
 
         <div class="timeline">
           <div class="timeline-item">
@@ -508,7 +822,7 @@
           </div>
 
           <div class="timeline-item">
-            <strong>9:40 - 11:30 | 企業PR・学生PR</strong><br>
+            <strong>9:40 - 11:30 | 企業PR・学生PR</strong>
             <span>※学生PR：原稿の棒読みは避け、明るく・元気に・笑顔で！普段の3倍の明るさを意識！</span>
           </div>
 
@@ -517,21 +831,49 @@
           </div>
 
           <div class="timeline-item">
-            <strong>12:05 - 17:25 | オファーが届いた企業と面談（最大8社）or 就活お役立ちセミナー</strong><br>
+            <strong>12:05 - 17:45 | オファーが届いた企業と面談（最大8社）or 就活お役立ちセミナー</strong>
             <span>※面談：全力でビジョン実現の可能性を探るのがポイント！</span>
+            <div class="term-schedule">
+              <div class="term-group">
+                <div class="term-group-title">💻 オンライン</div>
+                <ul class="term-list">
+                  <li><span class="term-no">1ターム</span><span class="term-time">12:05 - 12:35</span></li>
+                  <li><span class="term-no">2ターム</span><span class="term-time">12:45 - 13:15</span></li>
+                  <li><span class="term-no">3ターム</span><span class="term-time">13:25 - 13:55</span></li>
+                  <li><span class="term-no">4ターム</span><span class="term-time">14:05 - 14:35</span></li>
+                  <li><span class="term-no">5ターム</span><span class="term-time">14:55 - 15:25</span></li>
+                  <li><span class="term-no">6ターム</span><span class="term-time">15:35 - 16:05</span></li>
+                  <li><span class="term-no">7ターム</span><span class="term-time">16:15 - 16:45</span></li>
+                  <li><span class="term-no">8ターム</span><span class="term-time">16:55 - 17:25</span></li>
+                </ul>
+              </div>
+              <div class="term-group">
+                <div class="term-group-title">🏢 対面</div>
+                <ul class="term-list">
+                  <li><span class="term-no">1ターム</span><span class="term-time">12:25 - 12:55</span></li>
+                  <li><span class="term-no">2ターム</span><span class="term-time">13:05 - 13:35</span></li>
+                  <li><span class="term-no">3ターム</span><span class="term-time">13:45 - 14:15</span></li>
+                  <li><span class="term-no">4ターム</span><span class="term-time">14:25 - 14:55</span></li>
+                  <li><span class="term-no">5ターム</span><span class="term-time">15:15 - 15:45</span></li>
+                  <li><span class="term-no">6ターム</span><span class="term-time">15:55 - 16:25</span></li>
+                  <li><span class="term-no">7ターム</span><span class="term-time">16:35 - 17:05</span></li>
+                  <li><span class="term-no">8ターム</span><span class="term-time">17:15 - 17:45</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div class="timeline-item">
-            <strong>17:25 - 18:00 | アンケート回答・エンディング</strong>
+            <strong>〜18:00 | アンケート回答・エンディング</strong>
           </div>
         </div>
       </section>
 
       <!-- セクション6: 参加にあたっての心得 -->
       <section>
-        <h2>6. 参加にあたっての心得</h2>
+        <h2><span class="sec-num">6</span>参加にあたっての心得</h2>
 
-        <h3>■ トラブル対応</h3>
+        <h3>トラブル対応</h3>
         <p>万が一の遅刻や欠席、機材トラブルの際は<strong>速やかにLINEに連絡</strong>しましょう。</p>
 
         <div class="caution">
@@ -539,16 +881,16 @@
           企業様はあなたに会えることを楽しみにしています。原則キャンセルはできません。
         </div>
 
-        <h3>■ イベント詳細の連絡</h3>
+        <h3>イベント詳細の連絡</h3>
         <p>当日のZoomリンクやスケジュールの詳細は、<strong>LINEにてお送りいたします</strong>。LINEのメッセージを見落とさないようご注意ください。</p>
 
-        <h3>■ 最後に</h3>
+        <h3>最後に</h3>
         <p>このイベントは、あなたが「本当にやりたいこと」「本当に大切にしていること」を企業と共有する貴重な機会です。完璧を目指さず、<strong>ありのままの自分を表現</strong>することを心がけてください。</p>
-        <p style="margin-top: 30px; text-align: center; font-weight: 600; color: #E2003E;">皆様のご参加をお待ちしています！</p>
+        <p class="closing">皆様のご参加をお待ちしています！</p>
       </section>
     </div>
 
-    <footer style="background: #f9f9f9; padding: 30px 40px; text-align: center; color: #999; font-size: 14px; border-top: 1px solid #eee;">
+    <footer>
       <p>© 2026 Well Hunting. All rights reserved.</p>
       <p>このガイドは、イベント参加予定の学生の皆様向けに作成されました。</p>
     </footer>
